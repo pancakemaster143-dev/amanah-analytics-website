@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Amanah Analytics – Portfolio-Level Shariah Compliance Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Amanah Analytics helps Canadian Muslim professionals understand the Shariah compliance of their RRSPs and employer pensions at the portfolio level."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Amiri:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-text">
+          <span class="logo-amanah">AMANAH</span>
+          <span class="logo-gold-rule" aria-hidden="true"></span>
+          <div class="logo-subrow">
+            <span class="logo-analytics">ANALYTICS</span>
+            <span class="logo-arabic" lang="ar" dir="rtl">أمانة</span>
+          </div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#problem">The Problem</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#standards">Standards</a>
+        <a href="#who-for">Who It’s For</a>
+        <a href="#vision">Vision</a>
+      </nav>
+      <a href="#waitlist" class="btn btn-outline btn-small">Join waitlist</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">For Canadian Muslim professionals</p>
+          <h1 id="hero-heading">
+            Know if your RRSP or pension is truly halal.
+          </h1>
+          <p class="hero-subtitle">
+            Amanah Analytics audits what you already own – RRSPs, employer pensions, and
+            retirement funds – against Shariah standards at the <strong>portfolio level</strong>.
+            Not a stock screener. Not a robo-advisor.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#waitlist" class="btn btn-primary">Join the waitlist</a>
+            <button class="link-cta" data-scroll-target="#how-it-works">
+              See how it works
+            </button>
+          </div>
+
+          <p class="hero-footnote">
+            Early access for Muslim professionals in Canada. No spam. No sales pitches.
+          </p>
+        </div>
+
+        <!-- Faint dashboard mock -->
+        <div class="hero-mock">
+          <div class="mock-card">
+            <div class="mock-header">
+              <span class="mock-title">RRSP Compliance Overview</span>
+              <span class="mock-pill">Preview</span>
+            </div>
+            <div class="mock-body">
+              <div class="mock-score-block">
+                <div class="mock-score-ring">
+                  <div class="mock-score-inner">
+                    <span class="mock-score-number">78</span>
+                    <span class="mock-score-label">/100</span>
+                  </div>
+                </div>
+                <div class="mock-score-text">
+                  <p class="mock-score-heading">Portfolio Compliance</p>
+                  <p class="mock-score-caption">
+                    Based on AAOIFI &amp; MSCI Islamic screening.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mock-columns">
+                <div class="mock-column">
+                  <p class="mock-label">Portfolio breakdown</p>
+                  <div class="mock-bars">
+                    <div class="mock-bar">
+                      <span>Compliant equities</span>
+                      <div class="bar-track">
+                        <div class="bar-fill bar-fill-green" style="width: 62%;"></div>
+                      </div>
+                      <span class="bar-value">62%</span>
+                    </div>
+                    <div class="mock-bar">
+                      <span>Non-compliant exposure</span>
+                      <div class="bar-track">
+                        <div class="bar-fill bar-fill-amber" style="width: 18%;"></div>
+                      </div>
+                      <span class="bar-value">18%</span>
+                    </div>
+                    <div class="mock-bar">
+                      <span>Interest-heavy fixed income</span>
+                      <div class="bar-track">
+                        <div class="bar-fill bar-fill-red" style="width: 20%;"></div>
+                      </div>
+                      <span class="bar-value">20%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mock-column">
+                  <p class="mock-label">Estimated annual purification</p>
+                  <p class="mock-purification-amount">$430<span class="per-year">/yr</span></p>
+                  <p class="mock-score-caption">
+                    Calculated from interest and non-compliant income exposure.
+                  </p>
+                  <ul class="mock-violations">
+                    <li>Conventional bank exposure in pension fund</li>
+                    <li>Insurance holdings with interest-based reserves</li>
+                    <li>High fixed-income allocation in target-date fund</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="mock-disclaimer">
+            Illustrative preview only. Not actual investment advice.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Problem Section -->
+    <section id="problem" class="section section-muted">
+      <div class="container section-grid">
+        <div>
+          <p class="eyebrow">The retirement gap</p>
+          <h2>You’re contributing every month. You still don’t know if it’s halal.</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Canadian Muslim professionals are diligent about saving for retirement – RRSPs,
+            employer pensions, and group plans. But the underlying investments are often
+            opaque, diversified, and packaged inside complex funds.
+          </p>
+          <div class="problem-list">
+            <div class="problem-item">
+              <h3>Hidden conventional exposure</h3>
+              <p>
+                Employer pensions and group plans frequently hold conventional banks, insurers,
+                and interest-based financial stocks – without disclosing them in a clear,
+                Shariah-aware format.
+              </p>
+            </div>
+            <div class="problem-item">
+              <h3>Target-date funds with heavy interest</h3>
+              <p>
+                As you approach retirement, “conservative” target-date funds often shift into
+                bonds and fixed income – increasing interest-heavy exposure at the exact time
+                your balance is largest.
+              </p>
+            </div>
+            <div class="problem-item">
+              <h3>No on-demand Shariah audit</h3>
+              <p>
+                In Canada, there is no accessible, on-demand way to run a Shariah compliance
+                audit on your total retirement portfolio. Existing tools focus on screening
+                individual stocks, not the real mix inside your RRSP or pension.
+              </p>
+            </div>
+            <div class="problem-item">
+              <h3>Confusion instead of clarity</h3>
+              <p>
+                The result is chronic uncertainty: you are saving responsibly, but you cannot
+                confidently say your retirement savings align with your principles.
+                Amanah reframes that confusion as a systemic gap – and fills it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. How Amanah Works -->
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <p class="eyebrow">How Amanah works</p>
+        <h2>From opaque statements to a principled portfolio view.</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Upload RRSP &amp; pension holdings</h3>
+            <p>
+              Securely upload your RRSP, employer pension, and retirement account holdings.
+              This can be from account statements, plan documents, or exported position files.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>We deconstruct underlying exposures</h3>
+            <p>
+              Amanah looks through pooled funds, ETFs, and target-date products to uncover the
+              underlying equities, fixed income, and sector allocations actually held on your behalf.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Apply AAOIFI &amp; MSCI Islamic screens</h3>
+            <p>
+              We apply Shariah business activity and financial ratio screens inspired by
+              AAOIFI Sharia Standard No. 21 and MSCI Islamic methodologies to each underlying exposure.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3>Receive a portfolio-level report</h3>
+            <p>
+              Get a transparent compliance score, breakdown of compliant vs. non-compliant exposure,
+              top violations, and an estimated annual purification amount – all at the portfolio level.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Mock Compliance Report Preview -->
+    <section class="section section-muted">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Preview</p>
+            <h2>A tangible compliance report for your actual retirement accounts.</h2>
+          </div>
+          <p class="section-intro">
+            This mock report illustrates how Amanah turns your RRSP or pension holdings into a
+            clear, interpretable Shariah compliance view – grounded in methodology, not marketing.
+          </p>
+        </div>
+
+        <div class="report-grid">
+          <!-- Left: Score + chart -->
+          <div class="report-card">
+            <h3>Compliance score &amp; asset mix</h3>
+            <div class="report-score-row">
+              <div class="report-score-circle">
+                <div class="circle-outer">
+                  <div class="circle-inner">
+                    <span class="circle-score">78</span>
+                    <span class="circle-label">out of 100</span>
+                  </div>
+                </div>
+              </div>
+              <div class="report-score-text">
+                <p class="report-score-title">Portfolio-level Shariah alignment</p>
+                <p class="report-score-desc">
+                  A composite score based on screened business activities, financial ratios,
+                  and the relative weight of compliant vs. non-compliant holdings in your portfolio.
+                </p>
+              </div>
+            </div>
+
+            <div class="report-breakdown">
+              <h4>Portfolio breakdown</h4>
+              <ul class="breakdown-list">
+                <li>
+                  <span class="dot dot-green"></span>
+                  <span>Compliant equities</span>
+                  <span class="breakdown-value">62%</span>
+                </li>
+                <li>
+                  <span class="dot dot-amber"></span>
+                  <span>Non-compliant exposure</span>
+                  <span class="breakdown-value">18%</span>
+                </li>
+                <li>
+                  <span class="dot dot-red"></span>
+                  <span>Interest-heavy fixed income</span>
+                  <span class="breakdown-value">20%</span>
+                </li>
+              </ul>
+
+              <div class="chart-row">
+                <!-- Simple donut chart using CSS -->
+                <div class="donut-chart" aria-hidden="true"></div>
+
+                <!-- Simple bar chart -->
+                <div class="bar-chart">
+                  <div class="bar-row">
+                    <span>Equities</span>
+                    <div class="bar-track">
+                      <div class="bar-fill bar-fill-green" style="width: 70%;"></div>
+                    </div>
+                    <span class="bar-value">70%</span>
+                  </div>
+                  <div class="bar-row">
+                    <span>Fixed income</span>
+                    <div class="bar-track">
+                      <div class="bar-fill bar-fill-red" style="width: 22%;"></div>
+                    </div>
+                    <span class="bar-value">22%</span>
+                  </div>
+                  <div class="bar-row">
+                    <span>Other / cash</span>
+                    <div class="bar-track">
+                      <div class="bar-fill bar-fill-amber" style="width: 8%;"></div>
+                    </div>
+                    <span class="bar-value">8%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Violations + purification -->
+          <div class="report-card">
+            <h3>Key violations &amp; purification estimate</h3>
+            <div class="report-section">
+              <h4>Top violations identified</h4>
+              <ul class="violations-list">
+                <li>
+                  <span class="violation-tag">Financials</span>
+                  <div>
+                    <p class="violation-title">Conventional bank holdings in global equity fund</p>
+                    <p class="violation-text">
+                      Exposure to conventional banks exceeding Shariah thresholds for interest-based income.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span class="violation-tag">Insurance</span>
+                  <div>
+                    <p class="violation-title">Insurers with interest-bearing reserves</p>
+                    <p class="violation-text">
+                      Insurance companies deriving significant income from interest-bearing reserves and bonds.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span class="violation-tag">Fixed income</span>
+                  <div>
+                    <p class="violation-title">Target-date bond allocations</p>
+                    <p class="violation-text">
+                      Age-based target-date funds allocating heavily to conventional bonds in later vintages.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="report-section">
+              <h4>Estimated annual purification</h4>
+              <p class="purification-amount">$430<span class="per-year">/yr</span></p>
+              <p class="purification-text">
+                This estimate reflects the portion of your portfolio’s income that should be purified
+                (donated away) based on interest and non-compliant revenue exposure, calculated using
+                established Shariah screening methodologies.
+              </p>
+            </div>
+
+            <div class="report-footnote">
+              <p>
+                This is an illustrative mock report to demonstrate format and methodology focus.
+                Amanah Analytics does not provide personalized fatwas or investment advice.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Standards & Methodology -->
+    <section id="standards" class="section">
+      <div class="container section-grid">
+        <div>
+          <p class="eyebrow">Standards &amp; methodology</p>
+          <h2>Built on established Shariah standards and transparent rules.</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Amanah Analytics is designed to be principled, explainable, and grounded in
+            widely recognized Shariah screening frameworks. The goal is clarity and
+            intellectual honesty – not promises of religious certainty.
+          </p>
+          <div class="pill-grid">
+            <div class="pill-card">
+              <h3>AAOIFI-based approach</h3>
+              <p>
+                We align with the spirit of <strong>AAOIFI Sharia Standard No. 21</strong> for
+                financial securities, applying business activity and financial ratio screens to
+                identify and flag non-compliant exposures.
+              </p>
+            </div>
+            <div class="pill-card">
+              <h3>MSCI Islamic methodology</h3>
+              <p>
+                Our engine references elements of the <strong>MSCI Islamic Index methodology</strong>
+                to calibrate business sector exclusions and quantitative thresholds for debt and
+                impermissible income.
+              </p>
+            </div>
+            <div class="pill-card">
+              <h3>Business activity screens</h3>
+              <p>
+                Excluding sectors such as conventional banking, insurance, alcohol, gambling,
+                pork-related products, adult entertainment, and other prohibited activities.
+              </p>
+            </div>
+            <div class="pill-card">
+              <h3>Financial ratio screens</h3>
+              <p>
+                Applying ratio thresholds (e.g., debt-to-equity, cash and interest-bearing items,
+                interest income as a share of revenue) typically in the
+                <strong>30–33%</strong> and <strong>5%</strong> range, in line with established
+                Shariah screening norms.
+              </p>
+            </div>
+          </div>
+          <div class="methodology-footnotes">
+            <p>
+              Amanah Analytics is a <strong>screening and transparency engine</strong>. It does
+              not issue fatwas and is not a substitute for qualified Shariah scholarship.
+            </p>
+            <p>
+              Nothing presented constitutes financial, tax, or investment advice. Always consult
+              qualified religious and financial professionals for personal decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Who It’s For -->
+    <section id="who-for" class="section section-muted">
+      <div class="container section-grid">
+        <div>
+          <p class="eyebrow">Who it’s for</p>
+          <h2>Built for Muslim professionals navigating modern retirement systems.</h2>
+        </div>
+        <div class="section-body">
+          <div class="who-grid">
+            <div class="who-card">
+              <h3>Muslim professionals with RRSPs</h3>
+              <p>
+                You consistently contribute to RRSPs or group RRSPs, but the underlying funds,
+                ETFs, and asset mixes are difficult to evaluate through a Shariah lens.
+              </p>
+            </div>
+            <div class="who-card">
+              <h3>Employees with employer pensions</h3>
+              <p>
+                Your employer offers a DB or DC pension with limited fund lineups.
+                You want to understand where your money actually sits – and how compliant it is.
+              </p>
+            </div>
+            <div class="who-card">
+              <h3>DIY investors seeking clarity</h3>
+              <p>
+                You have built your own portfolio using online brokers and ETFs, but you lack
+                a rigorous, portfolio-level view of Shariah compliance beyond single-stock screens.
+              </p>
+            </div>
+            <div class="who-card who-card-secondary">
+              <h3>Advisors adding a Shariah overlay</h3>
+              <p>
+                You advise Muslim clients and want a systematic way to overlay Shariah screening
+                on top of existing retirement portfolios and proposals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Vision / Market Gap -->
+    <section id="vision" class="section">
+      <div class="container section-grid">
+        <div>
+          <p class="eyebrow">Vision</p>
+          <h2>From a one-off tool to part of Islamic finance infrastructure.</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Islamic finance is an approximately <strong>$5 trillion</strong> industry globally and
+            growing, yet Muslim professionals in Canada remain underserved – especially when it comes
+            to retirement products embedded in mainstream capital markets.
+          </p>
+          <p>
+            Retirement accounts are complex by design: layers of funds, pooled vehicles, target-date
+            strategies, and institutional products that are difficult to evaluate from the outside.
+          </p>
+          <p>
+            Amanah Analytics aims to become a layer of <strong>transparent Shariah intelligence</strong>
+            within this system – turning opaque RRSPs and pensions into understandable, auditable
+            portfolios that respect both modern markets and enduring principles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Final Waitlist CTA -->
+    <section id="waitlist" class="section section-cta">
+      <div class="container cta-inner">
+        <div>
+          <p class="eyebrow">Early access waitlist</p>
+          <h2>Bring clarity to your RRSP or pension, before the next contribution.</h2>
+          <p class="section-intro">
+            Join the waitlist to be notified when Amanah Analytics opens to Canadian Muslim
+            professionals. No pricing yet. No obligation. Just thoughtful, early access.
+          </p>
+        </div>
+        <form class="waitlist-form">
+          <label class="sr-only" for="email">Email address</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+          <label class="sr-only" for="profile">I am...</label>
+          <select id="profile" name="profile">
+            <option value="rrsp">I have an RRSP</option>
+            <option value="pension">I have an employer pension</option>
+            <option value="both">I have both an RRSP and pension</option>
+            <option value="brokerage">
+              I invest through a brokerage account (TFSA / personal investing)
+            </option>
+            <option value="advisor">I am a financial advisor / planner</option>
+            <option value="exploring">Just exploring halal investing</option>
+          </select>
+
+          <label class="sr-only" for="name-input">Name (optional)</label>
+          <input
+            id="name-input"
+            type="text"
+            name="name"
+            class="waitlist-form__name"
+            placeholder="Your name (optional)"
+            autocomplete="name"
+          />
+          <button type="submit" class="btn btn-primary">
+            Join waitlist
+          </button>
+
+          <p class="form-note form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">© <span id="year"></span> Amanah Analytics. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
