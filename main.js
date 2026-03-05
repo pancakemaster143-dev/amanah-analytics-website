@@ -24,8 +24,9 @@ if (yearEl) {
 
 // Supabase config for waitlist (safe on frontend with RLS)
 const SUPABASE_URL = "https://kiqrpcojtgosnjjkkrps.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_UJlKdjf58xyWaqw2GBbsZQ_NI1YgGxn";
+// Use legacy anon key (JWT) for PostgREST
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtpcXJwY29qdGdvc25qamtrcnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1ODc3MjQsImV4cCI6MjA4ODE2MzcyNH0.wE6hROrf5eL-pX6LLF1WMYrn5js10wR-5zQwK7z8xlk";
 
 // Waitlist form: POST directly to Supabase REST
 const waitlistForm = document.querySelector(".waitlist-form");
@@ -58,26 +59,23 @@ if (waitlistForm) {
     }
 
     try {
-      const res = await fetch(
-        `${SUPABASE_URL}/rest/v1/waitlist_signups`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            apikey: SUPABASE_PUBLISHABLE_KEY,
-            Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
-            Prefer: "return=representation",
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist_signups`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          Prefer: "return=representation",
+        },
+        body: JSON.stringify([
+          {
+            email,
+            name: name || null,
+            segment: segment || null,
+            source,
           },
-          body: JSON.stringify([
-            {
-              email,
-              name: name || null,
-              segment: segment || null,
-              source,
-            },
-          ]),
-        }
-      );
+        ]),
+      });
 
       const text = await res.text();
       let data = {};
