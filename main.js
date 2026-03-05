@@ -22,13 +22,7 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-// Supabase config for waitlist (safe on frontend with RLS)
-const SUPABASE_URL = "https://kiqrpcojtgosnjjkkrps.supabase.co";
-// Use legacy anon key (JWT) for PostgREST
-const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtpcXJwY29qdGdvc25qamtrcnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1ODc3MjQsImV4cCI6MjA4ODE2MzcyNH0.wE6hROrf5eL-pX6LLF1WMYrn5js10wR-5zQwK7z8xlk";
-
-// Waitlist form: POST directly to Supabase REST
+// Waitlist form: POST to /api/waitlist
 const waitlistForm = document.querySelector(".waitlist-form");
 if (waitlistForm) {
   const messageEl = waitlistForm.querySelector(".form-message");
@@ -59,61 +53,33 @@ if (waitlistForm) {
     }
 
     try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist_signups`, {
+      const res = await fetch("/api/waitlist", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: SUPABASE_ANON_KEY,
-          Prefer: "return=representation",
-        },
-        body: JSON.stringify([
-          {
-            email,
-            name: name || null,
-            segment: segment || null,
-            source,
-          },
-        ]),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          name: name || undefined,
+          segment: segment || undefined,
+          source,
+        }),
       });
-
-      const text = await res.text();
-      let data = {};
-      try {
-        data = text ? JSON.parse(text) : {};
-      } catch {
-        data = {};
-      }
-
-      if (res.ok) {
+      const data = res.ok ? await res.json().catch(() => ({})) : null;
+      if (res.ok && data && data.success) {
         if (messageEl) {
           messageEl.textContent =
             "You're on the list. We'll be in touch inshaAllah.";
           messageEl.style.color = "#a7f3d0";
         }
         waitlistForm.reset();
-        return;
-      }
-
-      const raw = typeof data === "string" ? data : JSON.stringify(data);
-      if (
-        raw.includes("23505") ||
-        raw.toLowerCase().includes("duplicate") ||
-        (Array.isArray(data) &&
-          data[0] &&
-          typeof data[0].message === "string" &&
-          data[0].message.toLowerCase().includes("duplicate"))
-      ) {
-        if (messageEl) {
-          messageEl.textContent = "You're already on the waitlist.";
-          messageEl.style.color = "#a7f3d0";
-        }
-        return;
-      }
-
-      if (messageEl) {
-        messageEl.textContent =
+      } else {
+        const err =
+          (data && data.error) ||
+          (data && data.details) ||
           "Something went wrong submitting the form. Please try again.";
-        messageEl.style.color = "#fca5a5";
+        if (messageEl) {
+          messageEl.textContent = err;
+          messageEl.style.color = "#fca5a5";
+        }
       }
     } catch (err) {
       if (messageEl) {
