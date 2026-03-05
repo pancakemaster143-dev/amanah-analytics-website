@@ -28,16 +28,36 @@ if (waitlistForm) {
   const messageEl = waitlistForm.querySelector(".form-message");
   waitlistForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const email = document.querySelector("#email").value;
+    const emailInput = document.querySelector("#email");
     const nameInput = document.querySelector("#name-input");
+    const segmentSelect = document.querySelector("#profile");
+
+    const email = emailInput ? emailInput.value.trim() : "";
     const name = nameInput ? nameInput.value.trim() : "";
+    const segment = segmentSelect ? segmentSelect.value : "";
+
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get("utm_source") || null;
+
+    if (!email) {
+      if (messageEl) {
+        messageEl.textContent = "Please enter an email.";
+        messageEl.style.color = "#fca5a5";
+      }
+      return;
+    }
 
     if (messageEl) messageEl.textContent = "";
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name: name || undefined }),
+        body: JSON.stringify({
+          email,
+          name: name || undefined,
+          segment: segment || undefined,
+          source,
+        }),
       });
       const data = res.ok ? await res.json().catch(() => ({})) : null;
       if (res.ok && data && data.success) {
@@ -47,7 +67,10 @@ if (waitlistForm) {
         }
         waitlistForm.reset();
       } else {
-        const err = data && data.error ? data.error : "Something went wrong. Please try again.";
+        const err =
+          (data && data.error) ||
+          (data && data.details) ||
+          "Something went wrong. Please try again.";
         if (messageEl) {
           messageEl.textContent = err;
           messageEl.style.color = "#fca5a5";
@@ -55,7 +78,8 @@ if (waitlistForm) {
       }
     } catch (err) {
       if (messageEl) {
-        messageEl.textContent = "Network error. Please check your connection and try again.";
+        messageEl.textContent =
+          "Network error. Please check your connection and try again.";
         messageEl.style.color = "#fca5a5";
       }
     }
