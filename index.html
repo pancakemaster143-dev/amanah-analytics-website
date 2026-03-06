@@ -294,7 +294,10 @@
               </ul>
 
               <div class="chart-row">
+                <!-- Simple donut chart using CSS -->
                 <div class="donut-chart" aria-hidden="true"></div>
+
+                <!-- Simple bar chart -->
                 <div class="bar-chart">
                   <div class="bar-row">
                     <span>Equities</span>
@@ -521,19 +524,39 @@
         </div>
         <form class="waitlist-form">
           <label class="sr-only" for="email">Email address</label>
-          <input id="email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
           <label class="sr-only" for="profile">I am...</label>
           <select id="profile" name="profile">
             <option value="rrsp">I have an RRSP</option>
             <option value="pension">I have an employer pension</option>
             <option value="both">I have both an RRSP and pension</option>
-            <option value="brokerage">I invest through a brokerage account (TFSA / personal investing)</option>
+            <option value="brokerage">
+              I invest through a brokerage account (TFSA / personal investing)
+            </option>
             <option value="advisor">I am a financial advisor / planner</option>
             <option value="exploring">Just exploring halal investing</option>
           </select>
+
           <label class="sr-only" for="name-input">Name (optional)</label>
-          <input id="name-input" type="text" name="name" class="waitlist-form__name" placeholder="Your name (optional)" autocomplete="name" />
-          <button type="submit" class="btn btn-primary">Join waitlist</button>
+          <input
+            id="name-input"
+            type="text"
+            name="name"
+            class="waitlist-form__name"
+            placeholder="Your name (optional)"
+            autocomplete="name"
+          />
+          <button type="submit" class="btn btn-primary">
+            Join waitlist
+          </button>
+
           <p class="form-note form-message" aria-live="polite"></p>
         </form>
       </div>
