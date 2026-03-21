@@ -780,6 +780,78 @@ p {
   padding-right: 0.25rem;
 }
 
+/* Recommendations + projected score */
+
+.report-actions {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.report-actions h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.45rem;
+}
+
+.actions-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.84rem;
+  color: #374151;
+}
+
+.actions-list li + li {
+  margin-top: 0.35rem;
+}
+
+.projected-compliance {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 61, 46, 0.14);
+  background: linear-gradient(135deg, rgba(15, 61, 46, 0.04), rgba(212, 175, 55, 0.08));
+}
+
+.projected-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-gray);
+  margin-bottom: 0.2rem;
+}
+
+.projected-score {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.projected-from {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.projected-arrow {
+  font-size: 0.95rem;
+  color: var(--muted-gray);
+}
+
+.projected-to {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f3d2e;
+  line-height: 1;
+}
+
+.projected-note {
+  margin: 0.2rem 0 0;
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+
 /* Violations & purification */
 
 .report-section {
