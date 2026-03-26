@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   if (!email) return res.status(400).json({ error: "No email" });
 
   const payload = {
-    email,
+    email: String(email).trim(),
     name: name || null,
     segment: segment || null,
     source: source || null,
@@ -25,11 +25,26 @@ export default async function handler(req, res) {
     }
   );
 
+  // Supabase/PostgREST can return 409 for a conflict (often "already exists" if a unique constraint is present).
+  // Treat that as success so users don't get blocked when they retry / already signed up.
+  if (response.status === 409) {
+    return res.status(200).json({ success: true, alreadyOnList: true });
+  }
+
   if (!response.ok) {
     const text = await response.text().catch(() => "");
-    return res
-      .status(500)
-      .json({ error: "Failed to add to waitlist", details: text || undefined });
+    const details = text || undefined;
+    // 400 is commonly constraint/validation related (e.g., email format check).
+    if (response.status === 400) {
+      return res.status(400).json({
+        error: "Please enter a valid email address.",
+        details,
+      });
+    }
+    return res.status(500).json({
+      error: "Failed to add to waitlist",
+      details,
+    });
   }
 
   return res.status(200).json({ success: true });

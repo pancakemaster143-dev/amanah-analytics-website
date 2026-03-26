@@ -66,8 +66,9 @@ if (waitlistForm) {
       const data = res.ok ? await res.json().catch(() => ({})) : null;
       if (res.ok && data && data.success) {
         if (messageEl) {
-          messageEl.textContent =
-            "You're on the list. We'll be in touch inshaAllah.";
+          messageEl.textContent = data.alreadyOnList
+            ? "You're already on the list. We'll be in touch inshaAllah."
+            : "You're on the list. We'll be in touch inshaAllah.";
           messageEl.style.color = "#a7f3d0";
         }
         waitlistForm.reset();
